@@ -25,7 +25,7 @@ On your VS Code open the folder ( by using file option on your VS Code or code f
 ...
 This is a repository created to publish all the Bash Basich and project automation
 
-* This reponis created to share all the linux basics
-* Along with Linux BAsh Syntax
+* This repo is created to share all the linux basics
+* Along with Linux Bash Syntax
 * Then we will Automate the infrastructure provisioning
 * And then congiguration Managment.
