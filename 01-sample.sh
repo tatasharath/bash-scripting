@@ -9,5 +9,5 @@ echo Welcome To Bach Scripting
 # $ bash scriptName.sh  or  sh scriptName.sh  or  ./scriptName.sh
 
 echo Line1
-echo hello
-echo world
+echo Line2
+echo Line3
