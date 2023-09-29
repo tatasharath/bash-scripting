@@ -1,2 +1,2 @@
-int a;
-a = "inc";
+echo int a;
+echo a = "inc";
