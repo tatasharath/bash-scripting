@@ -20,3 +20,11 @@ echo Line3
 
 echo -e "sarath\nDevops"
 echo -e 'Saisarath\nDevops'
+
+echo -e "Line5\nLine6"
+# Whenever you're using special characters , always enclose them in DOUBLE QUOTES
+# " "  : Double Quotes 
+# ' '  : Single Quotes
+
+echo -e "Cloud\tDevOps\tare\tBooming"
+echo -e "We\tAre\tLearning\tCloudDevOps \n\tThis is my batch55"
