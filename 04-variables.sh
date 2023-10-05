@@ -6,7 +6,7 @@
 a=10                # a is a integer
 b=20                # b is also an interger 
 c=xyz               # c is a string 
-DATE="02AUG2023"    # HardCoding
+DATE="05OCT2023"    # HardCoding
 
 # There is no concept of data types in linux or shellScripting.
 # By default. every thing is a string.
