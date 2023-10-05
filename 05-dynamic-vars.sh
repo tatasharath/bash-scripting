@@ -2,7 +2,7 @@
 
 DATE="$(date +%F)"
 
-echo -e "Todays date is \e[34m $DATE \e[0m"
+echo -e "Todays date is \e[33m $DATE \e[0m"
 
 SESSIONS_COUNT="$(who | wc -l)"
 
