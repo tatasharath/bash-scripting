@@ -19,10 +19,10 @@
 # f
 
 
-# sample(){
-#     echo Hai from sarath
-#     echo function is compleated
-# }
+sample(){
+    echo Hai from sarath
+    echo function is compleated
+}
 
 # sample
 
@@ -32,19 +32,20 @@
 
 stat (){
     echo number sessions open $(who | wc -l)
+    sample
     echo todays date is $(date +%F)
 }
 
 stat
 
-sleep 1
+# sleep 1
 
-stat
+# stat
 
-sleep 2
+# sleep 2
 
-stat
+# stat
 
-sleep 3
+# sleep 3
 
-stat
+# stat
