@@ -31,8 +31,8 @@
 # sample
 
 stat (){
-    echo number sessions open$(who | wc -l)
-    echo todays date is $(date +%f)
+    echo number sessions open $(who | wc -l)
+    echo todays date is $(date +%F)
 }
 
 stat
