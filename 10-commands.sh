@@ -19,13 +19,20 @@
 # f
 
 
-sample(){
-    echo Hai from sarath
-    echo function is compleated
+# sample(){
+#     echo Hai from sarath
+#     echo function is compleated
+# }
+
+# sample
+
+# echo cample call is compleated
+
+# sample
+
+stat (){
+    echo number sessions open$(who | wc -l)
+    echo todays date is $(date +%f)
 }
 
-sample
-
-echo cample call is compleated
-
-sample
+stat
