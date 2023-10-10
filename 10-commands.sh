@@ -34,3 +34,17 @@ stat (){
     echo number sessions open $(who | wc -l)
     echo todays date is $(date +%F)
 }
+
+stat
+
+sleep 1
+
+stat
+
+sleep 2
+
+stat
+
+sleep 3
+
+stat
