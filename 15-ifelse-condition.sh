@@ -15,5 +15,5 @@ elif [ "$ACTION" == "restart" ]; then
 echo -e "\e[33m Restarting my demo on if \e[0m"
 
 else
- echo -e "\e[31m condition is false \e[0m"
+ echo -e "\e[31m example usage \e[0m \n bash script name - $0 stop"
 fi
