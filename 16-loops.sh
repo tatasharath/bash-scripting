@@ -18,18 +18,19 @@ done
 
 # while loop syntax
 
-while [ condition ];
-do
-    # statements
-    # commands
-done  
+# while [ condition ];
+# do
+#     # statements
+#     # commands
+# done  
 
 #example
 
 sarath=10
-while [$sarath -lt 15] ; do
+
+while [ $sarath -lt 15 ] ; do
 
 echo $sarath
 
-((sarath++))
+( (sarath++) )
 done
