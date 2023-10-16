@@ -11,7 +11,7 @@
 
 # For loop syntax 
 
-for var in 10 20 30 40 50 60 70 sarath ; do 
+for var in 10 20 30 40 50 60 ; do 
  echo "variable value is $var"
 
 done
