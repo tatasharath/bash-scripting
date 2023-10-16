@@ -15,3 +15,21 @@ for var in 10 20 30 40 50 60 ; do
  echo "variable value is $var"
 
 done
+
+# while loop syntax
+
+while [ condition ];
+do
+    # statements
+    # commands
+done  
+
+#example
+
+sarath=10
+while [$sarath -lt 15] ; do
+
+echo $sarath
+
+sarath++
+done
