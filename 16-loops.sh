@@ -31,5 +31,5 @@ while [$sarath -lt 15] ; do
 
 echo $sarath
 
-sarath++
+((sarath++))
 done
