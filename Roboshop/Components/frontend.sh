@@ -9,8 +9,10 @@ echo -e "\e[32m Configuring frontend.....\e[0m"
 echo -n "Installing Frontend :"
 
 yum install nginx -y &>> /tmp/frontend.log
-# USER = $? 
-elif [ $USER_ID -eq 0 ]; then
+
+USER = $? 
+
+elif [ $USER -eq 0 ]; then
 
 echo "Successful installed"
 
