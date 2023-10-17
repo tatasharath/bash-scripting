@@ -16,5 +16,5 @@ echo -e "\e[32m Configuring frontend.....\e[0m"
 echo "Installing Frontend :"
 
 
-yum unstall nginx -y &>> /tmp/frontend.log
+yum install nginx -y &>> /tmp/frontend.log
 
