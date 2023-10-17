@@ -10,7 +10,7 @@ exit 1
 fi
 
 
-# echo "Configuring frontend"
+echo "Configuring frontend"
 
-# yum unstall nginx -y
+yum unstall nginx -y
 
