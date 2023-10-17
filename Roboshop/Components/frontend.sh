@@ -10,7 +10,11 @@ exit 1
 fi
 
 
-echo "Configuring frontend"
 
-yum unstall nginx -y
+echo -e "\e[32m Configuring frontend.....\e[0m" 
+
+echo "Installing Frontend :"
+
+
+yum unstall nginx -y &>> /tmp/frontend.log
 
