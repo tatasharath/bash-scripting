@@ -1,7 +1,7 @@
 #!/bin/bash
 
 USER_ID=$(id -u)
-
+set -x
 if [ $USER_ID -eq 0 ] ; then 
 
 echo -e "\e[32m Configuring frontend.....\e[0m" 
@@ -21,7 +21,7 @@ echo -e "\e[33m to excute the command user should be a root user or a sudo \e[0m
 exit 1
 
 fi
-
+set +x
 
 
 # if [ $USER_ID -ne 0 ] ; then    
