@@ -15,8 +15,9 @@ elif [ $? -eq 0 ]; then
 echo "successful installed"
 
 else
-echo -e "\e[31m to excute the command user should be a root user or a sudo \e[0m \n \t Example: sudo bash wrapper.sh"
+echo -e "\e[31m Not Installed \e[0m"
 
+echo -e "\e[33m to excute the command user should be a root user or a sudo \e[0m \n \t Example: sudo bash wrapper.sh"
 exit 1
 fi
 
