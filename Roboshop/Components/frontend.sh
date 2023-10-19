@@ -30,7 +30,11 @@ fi
 echo "Starting nginx:"
 
 systemctl enable nginx
+exit 2
+
 systemctl start nginx
+exit 3
+
 if [ $? -eq 0 ] ; then
 
 echo -e "\e[32m Successfully started \e[0m"
