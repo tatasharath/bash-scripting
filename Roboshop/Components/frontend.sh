@@ -10,12 +10,12 @@ echo -n "Installing Frontend :"
 
 yum install nginx -y &>> /tmp/frontend.log
 
-echo $?
-# USER = $? 
+# echo $?
+USER=$? 
 
-elif [ $? -eq 0 ]; then
-
-echo "Successful installed"
+elif [ USER == $? ]; then
+-e "\e[32m Successful installed \e[0m"
+# echo "Successful installed"
 
 else
 echo -e "\e[31m Not Installed \e[0m"
