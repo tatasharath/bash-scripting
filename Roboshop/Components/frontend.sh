@@ -28,7 +28,9 @@ fi
 fi
 
 echo -n "Starting nginx:"
+
 systemctl enable nginx
+
 systemctl start nginx
 
 if [ $? -eq 0 ] ; then
