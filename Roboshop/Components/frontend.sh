@@ -15,7 +15,7 @@ echo -e "\e[32m Configuring frontend.....\e[0m"
 
 echo -n "Installing Frontend:"
 
-yum install iahsbcbhas -y &>> /tmp/frontend.log
+yum install nginx -y &>> /tmp/frontend.log
 
 if [ $? -eq 0 ] ; then
 
