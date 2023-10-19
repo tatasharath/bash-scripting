@@ -20,7 +20,8 @@ echo -n "Installing Frontend :"
 
 yum install nginx -y &>> /tmp/frontend.log
 exit 0
-if [ $? -eq 0]; then
+
+if [ $USER -eq 0] ; then
 
 echo -e "\e[32m Successful installed \e[0m"
 
