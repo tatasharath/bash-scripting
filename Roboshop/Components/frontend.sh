@@ -33,7 +33,6 @@ systemctl enable nginx
 exit 2
 
 systemctl start nginx
-exit 3
 
 if [ $? -eq 0 ] ; then
 
