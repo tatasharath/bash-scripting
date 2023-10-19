@@ -21,12 +21,6 @@ echo -n "Installing Frontend :"
 yum install nginx -y &>> /tmp/frontend.log
 exit 0
 
-if [ $USER -eq 0] ; then
-
-echo -e "\e[32m Successful installed \e[0m"
-
-fi
-
 # echo "Successful installed"
 
 else
@@ -34,6 +28,11 @@ echo "userid doecnt match"
 
 fi
 
+if [ $USER -eq 0] ; then
+
+echo -e "\e[32m Successful installed \e[0m"
+
+fi
 
 # if [ $USER_ID -ne 0 ] ; then    
 #     echo -e "\e[31m Script is expected to executed by the root user or with a sudo privilege \e[0m \n \t Example: \n\t\t sudo bash wrapper.sh frontend"
