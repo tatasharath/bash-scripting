@@ -2,7 +2,7 @@
 
 USER_ID=$(id -u)
 
-$?=0 
+USER=$? 
 
 if [ $USER_ID -eq 0 ] ; then 
 
@@ -14,9 +14,9 @@ exit 0
 
 # echo $?
 
-elif [ 0 -eq 0 ] ; then
+elif [ $USER -eq 0 ] ; then
 
--e "\e[32m Successful installed \e[0m"
+echo -e "\e[32m Successful installed \e[0m"
 # echo "Successful installed"
 
 else
