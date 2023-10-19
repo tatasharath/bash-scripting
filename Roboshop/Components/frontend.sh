@@ -27,7 +27,7 @@ fi
 
 fi
 
-echo "Starting nginx:"
+echo -n "Starting nginx:"
 
 systemctl enable nginx
 exit 2
