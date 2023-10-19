@@ -3,17 +3,18 @@
 USER_ID=$(id -u)
 
 if [ $USER_ID -eq 0 ] ; then 
-
 echo -e "\e[32m Configuring frontend.....\e[0m" 
-
 echo -n "Installing Frontend :"
 
 yum install nginx -y &>> /tmp/frontend.log
+exit 1
 
 # echo $?
+
 USER=$? 
 
-elif [ USER == $? ]; then
+elif [ $USER -eq $? ] ; then
+
 -e "\e[32m Successful installed \e[0m"
 # echo "Successful installed"
 
