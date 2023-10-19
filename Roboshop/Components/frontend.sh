@@ -15,7 +15,7 @@ echo -e "\e[32m Configuring frontend.....\e[0m"
 
 echo -n "Installing Frontend:"
 
-yum install nginx -y &>> /tmp/frontend.log
+nx -y &>> /tmp/frontend.log
 
 if [ $? -eq 0 ] ; then
 
@@ -23,7 +23,6 @@ echo -e "\e[32m Successful installed \e[0m"
 
 else
 echo -e "\e[31m Installation is not successful \e[0m"
-
 fi
 
 fi
