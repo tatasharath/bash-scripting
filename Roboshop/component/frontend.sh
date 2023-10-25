@@ -55,7 +55,8 @@ echo -n Clean up of frontend :
 cd /usr/share/nginx/html
 
 rm -rf * &>> /tmp/frontend.log
-Sarath
+stat
+
 echo  -n Extracting Frontend :
 
 unzip /tmp/Frontend.zip  &>> /tmp/frontend.log
