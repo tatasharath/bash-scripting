@@ -11,7 +11,7 @@ exit 1
 
 elif [ $USER_ID -eq 0 ] ; then
 
-echo -e "\e[32m Configuring frontend.....\e[0m" 
+echo -e "\e[33m Configuring frontend.....\e[0m" 
 
 echo -n "Installing Frontend:"
 
