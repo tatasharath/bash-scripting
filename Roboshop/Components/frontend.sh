@@ -34,7 +34,7 @@ systemctl enable nginx
 systemctl start nginx
 
 if [ $? -eq 0 ] ; then
-echo -e "\e[32m Successfully stoped \e[0m"
+echo -e "\e[32m Successfully started \e[0m"
 else
 echo -e "\e[31m nginx not started \e[0m"
 fi
