@@ -46,7 +46,7 @@ echo -e "\e[31m nginx not started \e[0m"
 fi
 
 echo -n Downloading the frontend component :
-curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"
+curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/frontend/archive/main.zip"
 
 stat
 
