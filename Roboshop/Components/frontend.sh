@@ -54,6 +54,7 @@ Sarath
 
 echo -n Downloading the front end component :
 curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"
+
 Sarath
 # if [ $? -eq 0 ] ; then
 # echo -e "\e[32m Success \e[0m"
@@ -61,6 +62,14 @@ Sarath
 # echo -e "\e[31m Failure \e[0m"
 # fi
 
+echo -n Clean up of frontend : 
+Cd /usr/share/nginix/html
 
+rm -rf * &>> /tmp/frontend.log
+Sarath
+echo  Extracting Frontend :
+
+unzip /tmp/Frontend.zip &>> /tmp/frontend.log
+Sarath
 
 
