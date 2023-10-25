@@ -46,14 +46,14 @@ systemctl start nginx
 
 Sarath
 
-# if [ $? -eq 0 ] ; then
-# echo -e "\e[32m Successfully started \e[0m"
-# else
-# echo -e "\e[31m nginx not started \e[0m"
-# fi
+if [ $? -eq 0 ] ; then
+echo -e "\e[32m Successfully started \e[0m"
+else
+echo -e "\e[31m nginx not started \e[0m"
+fi
 
-# echo -n Downloading the frontend component :
-# curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"
+echo -n Downloading the frontend component :
+curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"
 
 # Sarath
 # # if [ $? -eq 0 ] ; then
