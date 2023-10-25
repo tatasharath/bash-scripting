@@ -29,9 +29,9 @@ fi
 
 echo -n "Starting nginx:"
 
-systemctl stop nginx
+systemctl enable nginx
 
-# systemctl start nginx
+systemctl start nginx
 
 if [ $? -eq 0 ] ; then
 echo -e "\e[32m Successfully stoped \e[0m"
