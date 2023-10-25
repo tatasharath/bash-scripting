@@ -59,7 +59,7 @@ stat
 
 echo  -n Extracting Frontend :
 
-unzip /tmp/Frontend.zip  &>> /tmp/frontend.log
+unzip /tmp/frontend.zip  &>> /tmp/frontend.log
 
 stat
 
