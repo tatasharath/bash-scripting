@@ -39,3 +39,11 @@ else
 echo -e "\e[31m nginx not started \e[0m"
 fi
 
+echo Downloading the front end component :
+curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"
+
+if [ $? -eq 0 ] ; then
+echo -e "\e[32m Success \e[0m"
+else
+echo -e "\e[31m Failure \e[0m"
+fi
