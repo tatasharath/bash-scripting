@@ -28,13 +28,6 @@ yum install nginx -y &>> /tmp/frontend.log
 
 Sarath
 
-# if [ $? -eq 0 ] ; then
-
-# echo -e "\e[32m Successful installed \e[0m"
-
-# else
-# echo -e "\e[31m Installation is not successful \e[0m"
-# fi
 
 fi
 
@@ -55,22 +48,19 @@ fi
 echo -n Downloading the frontend component :
 curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"
 
-# Sarath
-# # if [ $? -eq 0 ] ; then
-# # echo -e "\e[32m Success \e[0m"
-# # else
-# # echo -e "\e[31m Failure \e[0m"
-# # fi
+Sarath
 
-# echo -n Clean up of frontend : 
-# cd /usr/share/nginix/html
+echo -n Clean up of frontend : 
 
-# rm -rf * &>> /tmp/frontend.log
-# Sarath
-# echo  -n Extracting Frontend :
+cd /usr/share/nginix/html
 
-# unzip /tmp/Frontend.zip  &>> /tmp/frontend.log
-# Sarath
+rm -rf * &>> /tmp/frontend.log
+Sarath
+echo  -n Extracting Frontend :
+
+unzip /tmp/Frontend.zip  &>> /tmp/frontend.log
+
+Sarath
 
 
 
