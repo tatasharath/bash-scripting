@@ -63,13 +63,14 @@ Sarath
 # fi
 
 echo -n Clean up of frontend : 
-Cd /usr/share/nginix/html
+cd /usr/share/nginix/html
 
 rm -rf * &>> /tmp/frontend.log
 Sarath
-echo  Extracting Frontend :
+echo  -n Extracting Frontend :
 
 unzip /tmp/Frontend.zip &>> /tmp/frontend.log
 Sarath
+
 
 
