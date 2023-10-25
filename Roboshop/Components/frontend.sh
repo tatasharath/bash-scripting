@@ -1,5 +1,14 @@
 #!/bin/bash
 
+Sarath(){
+    if [ $? -eq 0 ] ; then
+echo -e "\e[32m Success \e[0m"
+else
+echo -e "\e[31m Failure \e[0m"
+fi
+
+}
+
 USER_ID=$(id -u)
 
 if [ $USER_ID -ne 0 ] ; then 
@@ -17,13 +26,15 @@ echo -n "Installing Frontend:"
 
 yum install nginx -y &>> /tmp/frontend.log
 
-if [ $? -eq 0 ] ; then
+Sarath
 
-echo -e "\e[32m Successful installed \e[0m"
+# if [ $? -eq 0 ] ; then
 
-else
-echo -e "\e[31m Installation is not successful \e[0m"
-fi
+# echo -e "\e[32m Successful installed \e[0m"
+
+# else
+# echo -e "\e[31m Installation is not successful \e[0m"
+# fi
 
 fi
 
@@ -33,17 +44,23 @@ systemctl enable nginx
 
 systemctl start nginx
 
-if [ $? -eq 0 ] ; then
-echo -e "\e[32m Successfully started \e[0m"
-else
-echo -e "\e[31m nginx not started \e[0m"
-fi
+Sarath
+
+# if [ $? -eq 0 ] ; then
+# echo -e "\e[32m Successfully started \e[0m"
+# else
+# echo -e "\e[31m nginx not started \e[0m"
+# fi
 
 echo -n Downloading the front end component :
 curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"
+Sarath
+# if [ $? -eq 0 ] ; then
+# echo -e "\e[32m Success \e[0m"
+# else
+# echo -e "\e[31m Failure \e[0m"
+# fi
 
-if [ $? -eq 0 ] ; then
-echo -e "\e[32m Success \e[0m"
-else
-echo -e "\e[31m Failure \e[0m"
-fi
+
+
+
