@@ -1,6 +1,6 @@
 #!/bin/bash
 
-Sarath(){
+stat(){
     if [ $? -eq 0 ] ; then
 echo -e "\e[32m Success \e[0m"
 else
@@ -26,7 +26,7 @@ echo -n "Installing Frontend:"
 
 yum install nginx -y &>> /tmp/frontend.log
 
-Sarath
+stat
 
 
 fi
@@ -37,7 +37,7 @@ systemctl enable nginx
 
 systemctl start nginx
 
-Sarath
+stat
 
 if [ $? -eq 0 ] ; then
 echo -e "\e[32m Successfully started \e[0m"
@@ -48,11 +48,11 @@ fi
 echo -n Downloading the frontend component :
 curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"
 
-Sarath
+stat
 
 echo -n Clean up of frontend : 
 
-cd /usr/share/nginix/html
+cd /usr/share/nginx/html
 
 rm -rf * &>> /tmp/frontend.log
 Sarath
@@ -60,7 +60,7 @@ echo  -n Extracting Frontend :
 
 unzip /tmp/Frontend.zip  &>> /tmp/frontend.log
 
-Sarath
+stat
 
 
 
