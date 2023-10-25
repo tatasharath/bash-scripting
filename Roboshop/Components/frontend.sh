@@ -69,7 +69,7 @@ rm -rf * &>> /tmp/frontend.log
 Sarath
 echo  -n Extracting Frontend :
 
-unzip /tmp/Frontend.zip &>> /tmp/frontend.log
+unzip /tmp/Frontend.zip  &>> /tmp/frontend.log
 Sarath
 
 
