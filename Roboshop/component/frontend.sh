@@ -11,6 +11,8 @@ fi
 }
 
 USER_ID=$(id -u)
+COMPONENT=$1
+LOGFILE=/tmp/frontend.log
 
 if [ $USER_ID -ne 0 ] ; then 
 
@@ -21,11 +23,11 @@ exit 1
 
 elif [ $USER_ID -eq 0 ] ; then
 
-echo -e "\e[33m Configuring frontend.....\e[0m" 
+echo -e "\e[33m Configuring ${COMPONENT}.....\e[0m" 
 
-echo -n "Installing Frontend:"
+echo -n "Installing nginx:"
 
-yum install nginx -y &>> /tmp/frontend.log
+yum install nginx -y &>> ${LOGFILE}
 
 stat
 
@@ -46,32 +48,32 @@ else
 echo -e "\e[31m nginx not started \e[0m"
 fi
 
-echo -n Downloading the frontend component :
+echo -n Downloading the ${COMPONENT} component :
 curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/frontend/archive/main.zip"
 
 stat
 
-echo -n Clean up of frontend : 
+echo -n Clean up of ${COMPONENT} : 
 
 cd /usr/share/nginx/html
 
-rm -rf * &>> /tmp/frontend.log
+rm -rf * &>> ${LOGFILE}
 stat
 
-echo  -n Extracting Frontend :
+echo  -n Extracting ${COMPONENT} :
 
-unzip /tmp/frontend.zip  &>> /tmp/frontend.log
+unzip /tmp/frontend.zip  &>> ${LOGFILE}
 
-echo -n Sorting the frontend files
+echo -n Sorting the ${COMPONENT} files
 mv frontend-main/* .    
 mv static/* .             
 rm -rf frontend-main README.md 
 mv localhost.conf /etc/nginx/default.d/roboshop.conf
 stat
 
-echo -n Restarting Frontend:
-systemctl daemon-reload &>> /tmp/frontend.log
-systemctl restart nginx &>> /tmp/frontend.log
+echo -n Restarting ${COMPONENT}:
+systemctl daemon-reload &>> ${LOGFILE}
+systemctl restart nginx &>> ${LOGFILE}
 stat
 
 
