@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 stat(){
     if [ $? -eq 0 ] ; then
