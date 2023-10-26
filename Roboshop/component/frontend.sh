@@ -64,15 +64,16 @@ unzip /tmp/frontend.zip  &>> /tmp/frontend.log
 stat
 
 echo -n Sorting the frontend files
-mv frontend-main/*
+mv frontend-main/* .
 mv static/*
-rm -rf frontend-main README.md &>> /tmp/frontend.log
+rm -rf static README.md &>> /tmp/frontend.log
 mv localhost.conf /etc/nginx/default.d/roboshop.conf
 stat
 
 echo -n Restating Frontend:
 systemctl daemon-reload &>> /tmp/frontend.log
 systemctl restart nginx &>> /tmp/frontend.log
+stat
 
 
 
