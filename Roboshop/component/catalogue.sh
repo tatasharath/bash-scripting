@@ -35,11 +35,19 @@ echo -n Installing NodeJS :
 yum install nodejs -y  &>> ${LOGFILE}
 stat
 
+id ${APPUSER}
+if [$? -ne 0 ] ; then
+echo -n "Creating Application User Account"
+useradd roboshop
+stat
+
 fi
 
 echo -n Creating Application User Account :
 useradd roboshop
 stat
+
+
 
 # echo -n Downloading ${COMPONENT} Schema :
 # curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"
