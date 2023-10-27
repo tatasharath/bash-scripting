@@ -60,6 +60,9 @@ mongo < catalogue.js
 mongo < users.js
 stat
 
+echo -e \e[35m ${COMPONENT} Installation is compleated \e[0m \n
+
+
 
 # echo -n "Installing nginx:"
 
