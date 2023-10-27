@@ -28,7 +28,7 @@ elif [ $USER_ID -eq 0 ] ; then
 echo -e "\e[33m Configuring ${COMPONENT}.....\e[0m" 
 
 echo  -n Configuring ${COMPONENT} repo :
-curl --silent --location https://rpm.nodesource.com/setup_16.x | bash - &>> ${LOGFILE}
+curl --silent --location https://rpm.nodesource.com/setup_16.x | sudo bash -
 stat
 
 echo -n Installing NodeJS :
