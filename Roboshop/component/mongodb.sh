@@ -1,7 +1,7 @@
 
 #!/bin/bash
 
-
+set -e
 stat(){
     if [ $? -eq 0 ] ; then
 echo -e "\e[32m Success \e[0m"
@@ -50,7 +50,7 @@ stat
 
 echo -n Extracting ${COMPONENT} Schema :
 cd /tmp
-unzip ${COMPONENT}.zip &>> ${LOGFILE}
+unzip -o ${COMPONENT}.zip &>> ${LOGFILE}
 stat
 
 echo -n Injecting ${COMPONENT} Schema :
