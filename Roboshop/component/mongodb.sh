@@ -45,6 +45,21 @@ systemctl enable mongod &>> ${LOGFILE}
 systemctl start mongod &>> ${LOGFILE}
 stat
 
+echo -n Downloading ${COMPONENT} Schema :
+curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"
+stat
+
+echo -n Extracting ${COMPONENT} Schema :
+cd /tmp
+unzip ${COMPONENT}.zip &>> ${LOGFILE}
+stat
+
+echo -n Injecting ${COMPONENT} Schema :
+cd ${COMPONENT}-main
+mongo < catalogue.js
+mongo < users.js
+stat
+
 
 # echo -n "Installing nginx:"
 
