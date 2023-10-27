@@ -27,13 +27,15 @@ elif [ $USER_ID -eq 0 ] ; then
 
 echo -e "\e[33m Configuring ${COMPONENT}.....\e[0m" 
 
-echo  -e Configuring ${COMPONENT} repo
+echo  -n Configuring ${COMPONENT} repo :
 curl -s -o /etc/yum.repos.d/mongodb.repo https://raw.githubusercontent.com/stans-robot-project/mongodb/main/mongo.repo
 stat
 
 echo -n Installing ${COMPONENT} :
-yum install -y mongodb-org &>> ${LOGFILE}
+yum install -y mongodb-org  &>> ${LOGFILE}
 stat
+
+fi
 
 
 
