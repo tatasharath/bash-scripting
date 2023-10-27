@@ -12,7 +12,7 @@ fi
 }
 
 USER_ID=$(id -u)
-COMPONENT=catalog
+COMPONENT=catalogue
 LOGFILE=/tmp/frontend.log
 APPUSER=roboshop
 
@@ -28,18 +28,19 @@ elif [ $USER_ID -eq 0 ] ; then
 echo -e "\e[33m Configuring ${COMPONENT}.....\e[0m" 
 
 echo  -n Configuring ${COMPONENT} repo :
+
 curl --silent --location https://rpm.nodesource.com/setup_16.x | bash - &>> ${LOGFILE}
 stat
 
-echo -n Installing NodJS :
+echo -n Installing NodeJS :
 yum install nodejs -y  &>> ${LOGFILE}
 stat
 
 fi
 
-echo -n Creating Application User Account
+echo -n Creating Application User Account :
 useradd roboshop
-
+stat
 
 # echo -n Downloading ${COMPONENT} Schema :
 # curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"
