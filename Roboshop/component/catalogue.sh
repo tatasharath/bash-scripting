@@ -38,15 +38,12 @@ stat
 fi
 
 id ${APPUSER} &>> ${LOGFILE}
+
 if [ $? -ne 0 ] ; then
 echo -n "Creating Application User Account"
 useradd roboshop
 stat
 fi
-
-echo -n Creating Application User Account :
-useradd roboshop
-stat
 
 
 
