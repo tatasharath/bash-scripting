@@ -56,8 +56,8 @@ stat
 
 echo -n Injecting ${COMPONENT} Schema :
 cd ${COMPONENT}-main
-mongo < catalogue.js
-mongo < users.js
+mongo < catalogue.js &>> ${LOGFILE}
+mongo < users.js &>> ${LOGFILE}
 stat
 
 echo -e \e[35m ${COMPONENT} Installation is compleated \e[0m \n
