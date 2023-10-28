@@ -45,11 +45,16 @@ useradd roboshop
 stat
 fi
 
+echo -n Downloading ${COMPONENT} :
+curl -s -L -o /tmp/${COMPONENT}.zip https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip
+stat
 
+echo -n Copying the ${COMPONENT} to ${APPUSER} home directory :
+cd/home/${APPUSER}/
 
-# echo -n Downloading ${COMPONENT} Schema :
-# curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"
-# stat
+rm -rf ${COMPONENT} &>> ${LOGFILE}
+unzip -o /tmp/${COMPONENT}.zip &>> ${LOGFILE}
+stat
 
 # echo -n Extracting ${COMPONENT} Schema :
 # cd /tmp
