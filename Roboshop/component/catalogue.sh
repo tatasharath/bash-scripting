@@ -57,7 +57,7 @@ stat
 
 echo -n Changing the ownershio :
 mv ${COMPONENT}-main ${COMPONENT}
-chwon -R ${APPUSER}:${APPUSER} /home/${APPUSER}/${COMPONENT}/
+chown -R ${APPUSER}:${APPUSER} /home/${APPUSER}/${COMPONENT}/
 stat
 
 # echo -n Injecting ${COMPONENT} Schema :
