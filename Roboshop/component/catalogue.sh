@@ -49,7 +49,7 @@ curl -s -L -o /tmp/${COMPONENT}.zip https://github.com/stans-robot-project/${COM
 stat
 
 echo -n Copying the ${COMPONENT} to ${APPUSER} home directory :
-cd/home/${APPUSER}/
+cd /home/${APPUSER}/
 
 rm -rf ${COMPONENT} &>> ${LOGFILE}
 unzip -o /tmp/${COMPONENT}.zip &>> ${LOGFILE}
