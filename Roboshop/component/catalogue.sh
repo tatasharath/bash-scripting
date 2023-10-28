@@ -34,7 +34,6 @@ stat
 echo -n Installing NodeJS :
 yum install nodejs -y  &>> ${LOGFILE}
 stat
-
 fi
 
 id ${APPUSER} &>> ${LOGFILE}
