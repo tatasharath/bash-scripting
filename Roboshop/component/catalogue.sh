@@ -55,10 +55,10 @@ rm -rf ${COMPONENT} &>> ${LOGFILE}
 unzip -o /tmp/${COMPONENT}.zip &>> ${LOGFILE}
 stat
 
-# echo -n Extracting ${COMPONENT} Schema :
-# cd /tmp
-# unzip -o ${COMPONENT}.zip &>> ${LOGFILE}
-# stat
+echo -n Changing the ownershio :
+mv ${COMPONENT}-main ${COMPONENT}
+chwon -R ${APPUSER}:${APPUSER} /home/${APPUSER}/${COMPONENT}/
+stat
 
 # echo -n Injecting ${COMPONENT} Schema :
 # cd ${COMPONENT}-main
