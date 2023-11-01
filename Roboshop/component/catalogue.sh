@@ -74,8 +74,9 @@ echo -n Starting the ${COMPONENT} Service:
 systemctl daemon-reload &>> ${LOGFILE}
 systemctl start ${COMPONENT}    &>> ${LOGFILE}
 systemctl restart ${COMPONENT}  &>> ${LOGFILE}
+stat
 
-echo -e \e[33m ${COMPONENT} Installation Compleated]\e[m0 \n
+echo -e "\e[33m ${COMPONENT} Installation Compleated]\e[m0 \n"
 
 
 # echo -n Injecting ${COMPONENT} Schema :
