@@ -1,4 +1,3 @@
-
 #!/bin/bash
 
 set -e
@@ -60,6 +59,11 @@ mv ${COMPONENT}-main ${COMPONENT}
 chown -R ${APPUSER}:${APPUSER} /home/${APPUSER}/${COMPONENT}/
 stat
 
+echo -n Generating the ${COMPONENT} Artifacts:
+
+cd /home/${APPSUER}/${COMPONENT}/
+npm install &>> ${LOGFILE}
+stat
 
 
 # echo -n Injecting ${COMPONENT} Schema :
