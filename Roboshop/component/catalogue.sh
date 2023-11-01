@@ -66,7 +66,7 @@ npm install     &>> ${LOGFILE}
 stat
 
 echo -n "Configuring the ${COMPONENT} system file:"
-sed -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/' /home/${APPUSER}/${COMPONENT}/systemd.service
+sed -ie 's/MONGO_DNSNAME/mongodb.roboshop.internal/' /home/${APPUSER}/${COMPONENT}/systemd.service
 mv /home/${APPUSER}/${COMPONENT}/systemd.service /etc/systemd/system/${COMPONENT}.service
 stat
 
@@ -76,7 +76,7 @@ systemctl start ${COMPONENT}    &>> ${LOGFILE}
 systemctl restart ${COMPONENT}  &>> ${LOGFILE}
 stat
 
-echo -e "\e[33m ${COMPONENT} Installation Compleated]\e[m0 \n"
+echo -e "\e[33m ${COMPONENT} Installation Compleated \e[0m \n"
 
 
 # echo -n Injecting ${COMPONENT} Schema :
