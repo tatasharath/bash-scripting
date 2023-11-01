@@ -61,8 +61,8 @@ stat
 
 echo -n Generating the ${COMPONENT} Artifacts:
 
-cd /home/${APPSUER}/${COMPONENT}/
-npm install &>> ${LOGFILE}
+cd /home/${APPUSER}/${COMPONENT}/
+npm install     &>> ${LOGFILE}
 stat
 
 
