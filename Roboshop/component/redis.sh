@@ -26,12 +26,12 @@ elif [ $USER_ID -eq 0 ] ; then
 
 echo -e "\e[33m Configuring ${COMPONENT}.....\e[0m" 
 
-echo  -n Configuring ${COMPONENT} repo :
-curl -L https://raw.githubusercontent.com/stans-robot-project/${COMPONENT}/main/redis.repo -o /etc/yum.repos.d/${COMPONENT}.repo &>> ${LOGFILE}
-stat
+echo -n "Configuring ${COMPONENT} repo :"
+curl -L https://raw.githubusercontent.com/stans-robot-project/${COMPONENT}/main/redis.repo -o /etc/yum.repos.d/${COMPONENT}.repo &>> ${LOGFILE} 
+stat 
 
-echo -n Installing ${COMPONENT} :
-yum install redis-6.2.11 -y &>> ${LOGFILE}
+echo -n "Installing ${COMPONENT} :"
+yum install redis-6.2.12 -y  &>> ${LOGFILE} 
 stat
 
 fi
