@@ -36,16 +36,15 @@ stat
 
 fi
 
-
 echo -n Enabling the ${COMPONENT} Visibility :
 sed -ie 's/127.0.0.1/0.0.0.0/g' /etc/${COMPONENT}.conf
 stat
+
 echo -n Starting the ${COMPONENT} :
 systemctl daemon-reload &>> ${LOGFILE}
 systemctl enable ${COMPONENT} &>> ${LOGFILE}
 systemctl start ${COMPONENT} &>> ${LOGFILE}
 stat
-
 
 
 echo -e "\e[35m ${COMPONENT} Installation is compleated \e[0m \n"
