@@ -31,7 +31,7 @@ curl -L https://raw.githubusercontent.com/stans-robot-project/${COMPONENT}/main/
 stat 
 
 echo -n "Installing ${COMPONENT} :"
-yum install redis-6.2.12 -y  &>> ${LOGFILE} 
+yum install redis-6.2.13 -y  &>> ${LOGFILE} 
 stat
 
 fi
