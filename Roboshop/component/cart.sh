@@ -1,6 +1,6 @@
 #!/bin/bash
 
-
+set -e
 stat(){
     if [ $? -eq 0 ] ; then
 echo -e "\e[32m Success \e[0m"
