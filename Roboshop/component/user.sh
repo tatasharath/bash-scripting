@@ -1,6 +1,6 @@
 #!/bin/bash
 
-
+set -e
 stat(){
     if [ $? -eq 0 ] ; then
 echo -e "\e[32m Success \e[0m"
@@ -66,7 +66,7 @@ npm install     &>> ${LOGFILE}
 stat
 
 echo -n "Configuring the ${COMPONENT} system file:"
-sed -ie 's/REDIS_ENDPOINT/redis.roboshop.internal/' -e 's/MONGO_ENDPOINT/mongodb.roboshop.internal/' /home/${APPUSER}/${COMPONENT}/systemd.service
+sed -i -e 's/REDIS_ENDPOINT/redis.roboshop.internal/' -e 's/MONGO_ENDPOINT/mongodb.roboshop.internal/' /home/${APPUSER}/${COMPONENT}/systemd.service
 mv /home/${APPUSER}/${COMPONENT}/systemd.service /etc/systemd/system/${COMPONENT}.service
 stat
 
