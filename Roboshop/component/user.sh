@@ -79,14 +79,6 @@ stat
 echo -e "\e[33m ${COMPONENT} Installation Compleated \e[0m \n"
 
 
-# echo -n Injecting ${COMPONENT} Schema :
-# cd ${COMPONENT}-main
-# mongo < catalogue.js &>> ${LOGFILE}
-# mongo < users.js &>> ${LOGFILE}
-# stat
-
-# echo -e "\e[35m ${COMPONENT} Installation is compleated \e[0m \n"
-
 
 
 
