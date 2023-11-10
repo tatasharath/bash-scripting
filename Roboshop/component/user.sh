@@ -76,7 +76,7 @@ systemctl start ${COMPONENT}    &>> ${LOGFILE}
 systemctl restart ${COMPONENT}  &>> ${LOGFILE}
 stat
 
-echo -e "\e[33m ${COMPONENT} Installation Compleated \e[0m \n"
+echo -e "\e[33m ${COMPONENT} Installation Completed \e[0m \n"
 
 
 
