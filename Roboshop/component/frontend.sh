@@ -27,8 +27,7 @@ echo -e "\e[33m Configuring ${COMPONENT}.....\e[0m"
 
 echo -n "Installing nginx:"
 
-yum install nginx -y 
-# &>> ${LOGFILE}
+yum install nginx -y &>> ${LOGFILE}
 
 stat
 
