@@ -6,6 +6,8 @@ COMPONENT=catalogue
 source component/common.sh
 NODEJS                       # calling nodejs function.
 
+echo -e "\e[33m ${COMPONENT} Installation Compleated \e[0m \n"
+
 # set -e
 # stat(){
 #     if [ $? -eq 0 ] ; then
@@ -82,7 +84,7 @@ NODEJS                       # calling nodejs function.
 # systemctl restart ${COMPONENT}  &>> ${LOGFILE}
 # stat
 
-echo -e "\e[33m ${COMPONENT} Installation Compleated \e[0m \n"
+
 
 
 
