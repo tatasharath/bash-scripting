@@ -72,9 +72,9 @@ mv localhost.conf /etc/nginx/default.d/roboshop.conf
 stat
 
 echo -n "Updating the Backend Components in revers proxy file:"
-for component is catalogue user cart ;do
+for component in catalogue user cart ;do
     sed -i -e "/${COMPONENT}/s/localhost/${CMPONENT}.roboshop.internal/" /ect/nginx/default.d/roboshop.conf
-    
+
 echo -n Restarting ${COMPONENT}:
 systemctl daemon-reload &>> ${LOGFILE}
 systemctl restart nginx &>> ${LOGFILE}
