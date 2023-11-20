@@ -25,7 +25,7 @@ CREATE_USER() {
         if [ $? -ne 0 ] ; then 
             echo -n "Creating Application User Account :"
             useradd roboshop 
-            stat 
+            stat $? 
         fi    
 }
 
@@ -34,17 +34,17 @@ DOWNLOAD_AND_EXTRACT() {
 
         echo -n "Downloading the ${COMPONENT} : "
         curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip" 
-        stat 
+        stat $? 
 
         cd /home/${APPUSER}/
         rm -rf ${COMPONENT}     &>> ${LOGFILE}
         unzip -o /tmp/${COMPONENT}.zip  &>> ${LOGFILE}
-        stat
+        stat $?
 
         echo -n "Changing the ownership :"
         mv  ${COMPONENT}-main ${COMPONENT} 
         chown -R ${APPUSER}:${APPUSER} /home/${APPUSER}/${COMPONENT}/
-        stat
+        stat $?
 
 }
 
@@ -53,13 +53,13 @@ CONFIG_SVC() {
         echo -n "Configuring the ${COMPONENT} system file :"
         sed -i -e 's/AMQPHOST/rabbitmq.roboshop.internal/' -e 's/USERHOST/user.roboshop.internal/'  -e 's/CARTHOST/cart.roboshop.internal/'  -e 's/CARTENDPOINT/cart.roboshop.internal/' -e 's/DBHOST/mysql.roboshop.internal/' -e 's/REDIS_ENDPOINT/redis.roboshop.internal/'  -e 's/CATALOGUE_ENDPOINT/catalogue.roboshop.internal/' -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/' -e 's/REDIS_ENDPOINT/redis.roboshop.internal/'  -e 's/MONGO_ENDPOINT/mongodb.roboshop.internal/' /home/${APPUSER}/${COMPONENT}/systemd.service
         mv /home/${APPUSER}/${COMPONENT}/systemd.service /etc/systemd/system/${COMPONENT}.service
-        stat 
+        stat $? 
 
         echo -n "Starting the ${COMPONENT} service :"
         systemctl daemon-reaload &>> ${LOGFILE}
         systemctl enable ${COMPONENT} &>> ${LOGFILE}
         systemctl restart ${COMPONENT} &>> ${LOGFILE}
-        stat 
+        stat $?
 }
 
 # Declaring a NodeJS Function
@@ -69,11 +69,11 @@ NODEJS() {
 
         echo -n "Configuring ${COMPONENT} repo :"
         curl --silent --location https://rpm.nodesource.com/setup_16.x | bash - &>> ${LOGFILE} 
-        stat  
+        stat $? 
 
         echo -n "Installing NodeJS :"
         yum install nodejs -y   &>> ${LOGFILE} 
-        stat 
+        stat $?
 
         CREATE_USER              # calls CREATE_USER function that creates user account.
 
@@ -82,7 +82,7 @@ NODEJS() {
         echo -n "Generating the ${COMPONENT} artifacts :"
         cd /home/${APPUSER}/${COMPONENT}/
         npm install     &>> ${LOGFILE}
-        stat  
+        stat $? 
 
         CONFIG_SVC
 
@@ -94,7 +94,7 @@ MVN_PACKAGE() {
         cd /home/${APPUSER}/${COMPONENT}/
         mvn clean package   &>> ${LOGFILE}
         mv target/${COMPONENT}-1.0.jar ${COMPONENT}.jar
-        stat 
+        stat $?
 }
 
 JAVA() {
@@ -102,7 +102,7 @@ JAVA() {
 
         echo -n "Installing maven:"
         yum install maven -y    &>> ${LOGFILE}
-        stat  
+        stat $? 
 
         CREATE_USER              # calls CREATE_USER function that creates user account.
 
@@ -120,7 +120,7 @@ PYTHON() {
 
         echo -n "Installing python:"
         yum install python36 gcc python3-devel -y &>> ${LOGFILE}
-        stat  
+        stat $? 
 
         CREATE_USER              # calls CREATE_USER function that creates user account.
 
@@ -129,14 +129,14 @@ PYTHON() {
         echo -n "Generating the artifacts"
         cd /home/${APPUSER}/${COMPONENT}/ 
         pip3 install -r requirements.txt    &>> ${LOGFILE} 
-        stat 
+        stat $?
 
         USERID=$(id -u roboshop)
         GROUPID=$(id -g roboshop)
 
         echo -n "Updating the uid and gid in the ${COMPONENT}.ini file"
         sed -i -e "/^uid/ c uid=${USERID}" -e "/^gid/ c gid=${GROUPID}" /home/${APPUSER}/${COMPONENT}/${COMPONENT}.ini
-        stat 
+        stat $?
 
         CONFIG_SVC
 }
