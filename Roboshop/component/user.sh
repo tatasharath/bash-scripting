@@ -8,6 +8,7 @@ NODEJS                       # calling nodejs function.
 
 echo -e "\e[33m ${COMPONENT} Installation Compleated \e[0m \n"
 
+
 # set -e
 # stat(){
 #     if [ $? -eq 0 ] ; then

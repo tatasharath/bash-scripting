@@ -75,6 +75,7 @@ echo -n "Updating the Backend Components in revers proxy file:"
 
 for component in catalogue user cart shipping ;do
     sed -i -e "/${component}/s/localhost/${component}.roboshop.internal/" /etc/nginx/default.d/roboshop.conf
+    stat
 done
 
 echo -n Restarting ${COMPONENT}:
