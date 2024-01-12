@@ -5,7 +5,7 @@ set -e
 # Validate the user who is running the script is a root user or not.
 COMPONENT=rabbitmq
 
-source components/common.sh
+source component/common.sh
 
 echo -e "\e[35m Configuring ${COMPONENT} ......! \e[0m \n"
 
