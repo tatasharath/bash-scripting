@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 set -e
 # Validate the user who is running the script is a root user or not.
 COMPONENT=rabbitmq
@@ -35,3 +36,4 @@ rabbitmqctl set_permissions -p / roboshop ".*" ".*" ".*"     &>> ${LOGFILE}
 stat $?
 
 echo -e "\e[35m ${COMPONENT} Installation Is Completed \e[0m \n"
+
