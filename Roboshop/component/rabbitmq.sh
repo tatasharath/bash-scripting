@@ -24,11 +24,11 @@ systemctl start rabbitmq-server    &>> ${LOGFILE}
 stat $? 
 
 # sudo rabbitmqctl list_users | grep roboshop &>> ${LOGFILE}
-if [ $? -ne 0 ] ; then 
+# if [ $? -ne 0 ] ; then 
     echo -n "Creating ${COMPOMENT} user account :"
     rabbitmqctl add_user roboshop roboshop123 &>> ${LOGFILE}
     stat $? 
-fi 
+# fi 
 
 echo -n "Configuring the permissions :"
 rabbitmqctl set_user_tags roboshop administrator     &>> ${LOGFILE}
